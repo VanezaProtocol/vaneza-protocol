@@ -1,0 +1,43 @@
+/* PALETTE — sampled, not chosen.
+   source  brand/LOGO VANEZA PNG.png (2000x2000, RGBA, fully opaque)
+   method  k-means k=3 over the unique-colour histogram (farthest-point init, 24 passes),
+           each centroid snapped to the nearest colour that really occurs, located by raster scan.
+   check   gates re-read the pixel at each coordinate below and compare.
+   other   brand/LOGO VANEZA PNG...png: colortype 6, 3819816 fully clear pure-black pixels
+           -> premultiplied resize required for every raster derived from it. */
+:root {
+  /* prov bg #0a0b0a @ 0,0 */
+  --bg: #0a0b0a;
+  /* prov fg #d5d7d2 @ 906,727 */
+  --fg: #d5d7d2;
+  /* prov acc #b9e567 @ 1507,1269 */
+  --acc: #b9e567;
+}
+
+/* DERIVED — mixes of the three sampled colours only. No other colour literal may exist outside this file. */
+:root {
+  --bg-2: color-mix(in srgb, var(--fg) 4%, var(--bg));
+  --bg-3: color-mix(in srgb, var(--fg) 8%, var(--bg));
+  --line: color-mix(in srgb, var(--fg) 14%, var(--bg));
+  --line-2: color-mix(in srgb, var(--fg) 26%, var(--bg));
+  --dim: color-mix(in srgb, var(--fg) 62%, var(--bg));
+  --acc-soft: color-mix(in srgb, var(--acc) 12%, transparent);
+  --acc-line: color-mix(in srgb, var(--acc) 38%, var(--bg));
+  --acc-glow: color-mix(in srgb, var(--acc) 22%, transparent);
+  --shade: color-mix(in srgb, var(--bg) 82%, transparent);
+  --shimmer: color-mix(in srgb, var(--fg) 9%, transparent);
+}
+
+/* TYPE, SPACE, MOTION */
+:root {
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  --sans: "Helvetica Neue", "Segoe UI", Arial, system-ui, sans-serif;
+  --gut: 16px;
+  --tap: 48px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 160ms;
+  --t-mid: 320ms;
+  --t-slow: 720ms;
+  --stagger: 70ms;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "vaneza",
+  "version": "0.1.0",
+  "description": "vaneza.dev landing",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "gates": "node scripts/gates.mjs"
+  },
+  "type": "module",
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
+    "puppeteer-core": "^25.12.0"
+  },
+  "private": true
+}

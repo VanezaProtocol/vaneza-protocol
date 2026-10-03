@@ -1,0 +1,6 @@
+/* Loaded only when scripts are off: nothing may stay hidden waiting for an observer. */
+[data-reveal], .mark .px { opacity: 1 !important; transform: none !important; }
+.hop::after { transform: none !important; }
+[data-live][data-state="loading"] .skel { display: none !important; }
+[data-live][data-state="loading"] .na { display: inline !important; }
+.pairs tbody .sk { display: none !important; }

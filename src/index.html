@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>vaneza — trade without the trail</title>
+<meta name="description" content="Vaneza brings private trading to Robinhood Chain: sealed notes, proofs made locally, solvers anyone may run.">
+<meta name="theme-color" content="{{THEME}}">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; connect-src {{CONNECT}}; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<link rel="canonical" href="https://vaneza.dev/">
+<meta property="og:title" content="vaneza — trade without the trail">
+<meta property="og:description" content="Sealed notes, locally made proofs, open solver settlement. Built for Robinhood Chain.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vaneza.dev/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="{{CSS}}">
+<noscript><link rel="stylesheet" href="/noscript.css"></noscript>
+</head>
+<body>
+<a class="skip" href="#main">jump to main</a>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<div class="top" id="top">
+  {{CA}}
+  <header class="bar">
+    <div class="wrap bar-in">
+      <a class="logo" href="#top" aria-label="vaneza, back to top">{{MARK_SMALL}}<span class="logo-t">vaneza</span><i class="logo-u" aria-hidden="true"></i></a>
+      <nav class="nav" aria-label="sections">
+        <a href="#pulse">pulse</a><a href="#observer">observer</a><a href="#route">route</a><a href="#ledger">ledger</a>
+      </nav>
+      <span class="pill" data-pill data-state="connecting" role="status"><i class="dot" aria-hidden="true"></i><span data-pill-t>connecting</span></span>
+      <div class="socials">{{X}}{{GITHUB}}</div>
+    </div>
+  </header>
+</div>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <p class="eyebrow" data-reveal data-i="0">// shielded trading · robinhood chain</p>
+        <h1 id="h-hero" data-reveal data-i="1">trade.<br><span class="h1-b">without the trail<i class="bar-u" aria-hidden="true"></i></span></h1>
+        <p class="lede" data-reveal data-i="2">Vaneza is private trading engineered for Robinhood Chain. Capital arrives from whichever address you already hold, rests as sealed notes, and moves once proof made locally says it may. Open solvers fill orders. Public history keeps outcomes, never owners.</p>
+        <div class="cta" data-reveal data-i="3">
+          <a class="btn btn-p" href="#route">trace a path</a>
+          <a class="btn" href="#pulse">live readings</a>
+        </div>
+        <p class="fine" data-reveal data-i="4">Nothing is announced until the ledger below says so.</p>
+      </div>
+      <div class="stage" aria-hidden="false">
+        <div class="stage-grid" data-depth="0.05" aria-hidden="true"></div>
+        <div class="stage-glow" data-depth="0.16" aria-hidden="true"></div>
+        <div class="stage-mark" data-depth="-0.08"><div class="mark-wrap" data-reveal>{{MARK}}</div></div>
+        <p class="stage-cap mute" aria-hidden="true">v_ · the pixel grid, unchanged</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="pulse" aria-labelledby="h-pulse">
+    <div class="wrap">
+      <header class="sec-h" data-reveal>
+        <p class="eyebrow">01 · pulse</p>
+        <h2 id="h-pulse">Robinhood Chain, live</h2>
+        <p class="sub">Readings come straight from the network's own node and public market feeds. When a feed goes quiet, its tile says so instead of guessing.</p>
+        <p class="pill-row"><span class="pill pill-inline" data-pill data-state="connecting" role="status"><i class="dot" aria-hidden="true"></i><span data-pill-t>connecting</span></span></p>
+      </header>
+
+      <div class="tiles">
+        <article class="tile" data-reveal data-i="0">
+          <p class="tile-k">latest block</p>
+          <p class="tile-v" data-live="block" data-state="loading"><span class="num" data-num>—</span><i class="skel" aria-hidden="true"></i><span class="na">unavailable</span></p>
+          <p class="tile-s">node rpc · id <span>{{CHAIN_ID}}</span></p>
+        </article>
+        <article class="tile" data-reveal data-i="1">
+          <p class="tile-k">gas price</p>
+          <p class="tile-v" data-live="gas" data-state="loading"><span class="num" data-num>—</span><i class="skel" aria-hidden="true"></i><span class="na">unavailable</span></p>
+          <p class="tile-s">gwei per unit</p>
+        </article>
+        <article class="tile" data-reveal data-i="2">
+          <p class="tile-k">value locked</p>
+          <p class="tile-v" data-live="tvl" data-state="loading"><span class="num" data-num>—</span><i class="skel" aria-hidden="true"></i><span class="na">unavailable</span></p>
+          <p class="tile-s">chain total · defillama</p>
+        </article>
+        <article class="tile" data-reveal data-i="3">
+          <p class="tile-k">24h volume</p>
+          <p class="tile-v" data-live="volume" data-state="loading"><span class="num" data-num>—</span><i class="skel" aria-hidden="true"></i><span class="na">unavailable</span></p>
+          <p class="tile-s">busiest pools · dexscreener</p>
+        </article>
+      </div>
+
+      <div class="duo">
+        <section class="panel" data-reveal data-i="0" aria-label="value locked, last 90 days">
+          <div class="hd"><span>value locked · 90 days</span><span class="mute" data-spark-note>defillama</span></div>
+          <div class="spark" data-live="spark" data-state="loading">
+            <i class="skel skel-block" aria-hidden="true"></i>
+            <svg class="spark-svg" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true"><path class="spark-fill" d=""/><path class="spark-line" d="" pathLength="1"/></svg>
+            <span class="na">unavailable</span>
+          </div>
+        </section>
+        <section class="panel" data-reveal data-i="1" aria-label="busiest pools">
+          <div class="hd"><span>busiest pools</span><span class="mute">by liquidity</span></div>
+          <table class="pairs">
+            <thead><tr><th scope="col">pair</th><th scope="col" class="r">liquidity</th><th scope="col" class="r">24h</th></tr></thead>
+            <tbody data-live="pairs" data-state="loading">
+              <tr class="sk"><td><i class="skel"></i></td><td class="r"><i class="skel"></i></td><td class="r"><i class="skel"></i></td></tr>
+              <tr class="sk"><td><i class="skel"></i></td><td class="r"><i class="skel"></i></td><td class="r"><i class="skel"></i></td></tr>
+              <tr class="sk"><td><i class="skel"></i></td><td class="r"><i class="skel"></i></td><td class="r"><i class="skel"></i></td></tr>
+              <tr class="sk"><td><i class="skel"></i></td><td class="r"><i class="skel"></i></td><td class="r"><i class="skel"></i></td></tr>
+              <tr class="sk"><td><i class="skel"></i></td><td class="r"><i class="skel"></i></td><td class="r"><i class="skel"></i></td></tr>
+            </tbody>
+          </table>
+          <p class="na-row" data-pairs-na hidden>unavailable</p>
+        </section>
+      </div>
+      <noscript><p class="fine">Live readings need scripts enabled.</p></noscript>
+    </div>
+  </section>
+
+  <section class="sec" id="observer" aria-labelledby="h-obs">
+    <div class="wrap">
+      <header class="sec-h" data-reveal>
+        <p class="eyebrow">02 · observer</p>
+        <h2 id="h-obs">What a stranger can read</h2>
+        <p class="sub">One swap, two ledgers. The numbers are illustrative.</p>
+      </header>
+      <div class="duo">
+        <section class="panel" data-reveal data-i="0" aria-label="an open swap">
+          <div class="hd"><span>open swap</span><span class="mute">visible to anyone</span></div>
+          <dl class="kv">
+            <div><dt>sender</dt><dd class="strike">a named address</dd></div>
+            <div><dt>sold</dt><dd>0.80 ETH</dd></div>
+            <div><dt>bought</dt><dd>1,950.20 USDG</dd></div>
+            <div><dt>past</dt><dd class="strike">every earlier move of that address, one click away</dd></div>
+          </dl>
+        </section>
+        <section class="panel panel-acc" data-reveal data-i="1" aria-label="a vaneza swap">
+          <div class="hd"><span>vaneza swap</span><span class="acc">●</span></div>
+          <dl class="kv">
+            <div><dt>sender</dt><dd><span class="veil" data-veil aria-hidden="true">████████</span><span class="sr">hidden by cryptography</span></dd></div>
+            <div><dt>sold</dt><dd>0.80 ETH</dd></div>
+            <div><dt>bought</dt><dd>1,950.20 USDG</dd></div>
+            <div><dt>proof</dt><dd>accepted on-chain <span class="acc">✓</span></dd></div>
+            <div><dt>past</dt><dd class="acc">no thread toward funding address</dd></div>
+          </dl>
+        </section>
+      </div>
+      <p class="note" data-reveal>Tokens and sums stay readable, and timing may hint at things. Vaneza narrows who is attached to trades; it does not make trading invisible.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="route" aria-labelledby="h-route">
+    <div class="wrap">
+      <header class="sec-h" data-reveal>
+        <p class="eyebrow">03 · route</p>
+        <h2 id="h-route">Five hops, one idea</h2>
+        <p class="sub">One deposit from the address you hold; after it, all motion occurs among sealed notes.</p>
+      </header>
+      <ol class="hops" aria-label="route of a private trade">
+        <li class="hop" data-reveal data-i="0"><span class="hop-n">a</span><strong>funding address</strong><span class="mute">public</span></li>
+        <li class="hop" data-reveal data-i="1"><span class="hop-n">b</span><strong>shield vault</strong><span class="mute">keeps deposits</span></li>
+        <li class="hop" data-reveal data-i="2"><span class="hop-n">c</span><strong>sealed notes</strong><span class="mute">owner hidden</span></li>
+        <li class="hop" data-reveal data-i="3"><span class="hop-n">d</span><strong>browser proof</strong><span class="mute">made locally</span></li>
+        <li class="hop" data-reveal data-i="4"><span class="hop-n">e</span><strong>solver</strong><span class="mute">fills the order</span></li>
+      </ol>
+      <div class="steps">
+        <article class="step" data-reveal data-i="0"><p class="step-n">01</p><h3>Deposit</h3><p>Move funds into the vault from any address you hold. Sealed notes come back as your balance.</p></article>
+        <article class="step" data-reveal data-i="1"><p class="step-n">02</p><h3>Prove</h3><p>Local code in this tab demonstrates spending rights while revealing neither which note nor whose.</p></article>
+        <article class="step" data-reveal data-i="2"><p class="step-n">03</p><h3>Settle</h3><p>Solvers race to fill orders; the vault verifies each proof before value is released.</p></article>
+        <article class="step" data-reveal data-i="3"><p class="step-n">04</p><h3>Exit</h3><p>Withdrawals arrive back at your starting address. No detour, no fresh address to trust.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="limits" aria-labelledby="h-lim">
+    <div class="wrap">
+      <header class="sec-h" data-reveal>
+        <p class="eyebrow">04 · limits</p>
+        <h2 id="h-lim">Honest edges</h2>
+      </header>
+      <div class="steps steps-3">
+        <article class="step" data-reveal data-i="0"><h3>Less exposure, not none</h3><p>Owners vanish from trade data anyone can read. That trades happen remains visible.</p></article>
+        <article class="step" data-reveal data-i="1"><h3>Habits still leak</h3><p>Odd hours, round sums and reused routes can point back at you. Treat privacy as a practice.</p></article>
+        <article class="step" data-reveal data-i="2"><h3>Early work</h3><p>Nothing on this page promises dates, tokens or returns.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="ledger" aria-labelledby="h-led">
+    <div class="wrap">
+      <header class="sec-h" data-reveal>
+        <p class="eyebrow">05 · ledger</p>
+        <h2 id="h-led">Confirmed so far</h2>
+        <p class="sub">One line per outside fact. A line stays empty until the team states it, and empty lines link nowhere.</p>
+      </header>
+      <ul class="ledger" aria-label="register of public facts">
+{{LEDGER}}
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>vaneza.dev</span>
+    <span class="mute">built for Robinhood Chain</span>
+    <div class="socials">{{X}}{{GITHUB}}</div>
+  </div>
+</footer>
+
+<script src="{{JS}}" defer></script>
+</body>
+</html>
